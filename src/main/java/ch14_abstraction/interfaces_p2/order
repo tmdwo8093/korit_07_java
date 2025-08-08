@@ -1,0 +1,40 @@
+요구사항
+Payment 라는 이름의 인터페이스를 만드세요.
+
+boolean pay(int amount): 결제를 시도하고, 성공하면 true, 실패하면 false를 반환합니다.
+
+PointAccumulatable 라는 이름의 두 번째 인터페이스를 만드세요.
+
+void accumulatePoints(int amount): 결제 금액에 따라 포인트를 적립하는 기능입니다.
+
+CreditCard 클래스를 만드세요.
+
+이 클래스는 Payment와 PointAccumulatable 인터페이스를 **모두 구현(implements)**해야 합니다.
+
+내부 변수로 cardLimit(카드 한도)와 points(적립 포인트)를 가지게 하세요. (생성자에서 초기화)
+
+pay 메서드:
+
+결제 금액(amount)이 cardLimit보다 크면 "한도가 초과되었습니다." 메시지를 출력하고 false를 반환합니다.
+
+결제가 가능하면 cardLimit에서 금액을 차감하고, accumulatePoints 메서드를 호출한 뒤, 성공 메시지를 출력하고 true를 반환합니다.
+
+accumulatePoints 메서드: 결제 금액의 1%를 points에 적립합니다.
+
+카드 정보를 보여주는 showCardInfo() 메서드를 추가해 "현재 카드 한도: [금액], 포인트: [점수]"를 출력하게 만드세요.
+
+BankTransfer 클래스를 만드세요.
+
+이 클래스는 Payment 인터페이스만 구현합니다.
+
+pay 메서드: 항상 성공하며, "[금액]원이 계좌 이체되었습니다." 메시지를 출력하고 true를 반환합니다.
+
+ShoppingMall 이라는 메인 클래스를 만드세요.
+
+main 메서드에서 CreditCard 객체를 한도 20,000원으로 생성하세요.
+
+시나리오 1: 생성된 카드로 15,000원을 결제하고, 결제 성공 여부와 카드 정보를 출력하세요.
+
+시나리오 2: 이어서 같은 카드로 10,000원을 결제하고, 결제 실패 여부와 카드 정보를 출력하세요.
+
+시나리오 3: BankTransfer 객체로 5,000원을 결제하고 성공 여부를 출력하세요.
